@@ -63,4 +63,3 @@ class ContactsAndroidTests(unittest.TestCase):
         self.y.send_keys("13488834010")
         print "click ok"
         time.sleep(5)
-        self.driver.quit()
