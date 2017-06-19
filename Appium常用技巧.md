@@ -1,17 +1,17 @@
 # Appium常用技巧
+* 测试微信准备(android)：
 <pre><code>
-    android测试微信准备：
         1.打开微信debug，微信进入debugx5.qq.com这个地址，打开后，点击页面上"信息"页，勾选是否打开TBS内核Inspector调试功能。
         2.需要找到进入公众号的路径，此部分为native
         3.进入webview后，可以在chrome中打开"chrome://inspect/#devices"，查看当前webview的元素，方便后续定位
 </pre></code>
+* 每次运行测试，app都会重新安装:
 <pre><code>
-    每次运行测试，app都会重新安装
         1.1 在case里不要设置app的安装路径，只要设置desired_caps['appPackage']（app的包名）和 desired_caps['appActivity']（启动时的activity）即可
         1.2 在启动appium的时候，加上--no-reset参数
     </pre></code>
+* 等待操作:
 <pre><code>
-    等待操作
         2.1 尽量不要使用sleep方法
         2.2 使用implicitly_wait(1000)方法，隐性等待/如果一个无素没有出现都会默认等待你所设定的时间，直到超时或者元素出现
         2.3 WebDriverWait()，同样也是 webdirver 提供的方法。在设置时间内，默认每隔一段时间检测一次当前。页面元素是否存在，如果超过设置时间检测不到则抛出异常。
@@ -20,8 +20,8 @@
         is_disappeared = WebDriverWait(driver, 30, 1, (ElementNotVisibleException)).
         until_not(lambda x: x.find_element_by_id(“someId”).is_displayed())
 </pre></code>
+* 元素无法定位:
 <pre><code>
-    元素无法定位
         3.1 使用元素坐标点定位，有两种点击方法:
             一种是tap([(100, 20), (100, 60), (100, 100)], 500)
             另一种是使用swipe(630, 320, 630, 320, 500)方法
@@ -29,11 +29,13 @@
             # 获取页面class_name为android.widget.CheckBox的所有元素，形成一个list
             checkboxes = self.driver.find_elements_by_class_name('android.widget.CheckBox')
    </pre></code>
+* 指定元素进行操作:
 <pre><code>
-    # 指定元素进行操作
         checkboxes[0].click()
         checkboxes[1].click()
-    长按操作
+        </pre></code>
+* 长按操作:
+<pre><code>
         action1 = TouchAction(self.driver)
         el_3 = self.driver.find_element_by_id('cn.highing.hichat:id/topic_voice_send')
         action1.long_press(el_3).wait(10000).perform()
@@ -42,29 +44,29 @@
         el_3 = self.driver.find_element_by_id('cn.highing.hichat:id/topic_voice_send')
         action2.moveTo(el_3).release().perform()
         </pre></code>
+* 异常处理
 <pre><code>
-    异常处理
         if self.driver.current_activity == ".ui.GuideActivity":
             try:
                 做x这件事
             except:
                 x失败的话，做这里的事
                 </pre></code>
+* appium设置输入法:
 <pre><code>
-    appium设置输入法
         des.setCapability("unicodeKeyboard", "True")
         des.setCapability("resetKeyboard", "True")
         </pre></code>
+* 拖动操作解析:
 <pre><code>
-    拖动操作解析
         public void DragAndDrop(By dragElement, By dropElement)
             dragElement 起点元素，不要用输入框，尽量用不可点击的显示型元素
             dropElement 终点元素，不要用输入框，尽量用不可点击的显示型元素
             </pre></code>
 
-* 滑动操作
+* 滑动操作:
 <pre><code>
-    python
+    python:
         def swipe_to_up(self):
             """
             从下往上滑动
@@ -76,7 +78,7 @@
             self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, 500)
 </pre></code>
 <pre><code>
-    java
+    java:
         public void SwipeToUp(int during) {
             int width = driver.manage().window().getSize().width;
             int height = driver.manage().window().getSize().height;
