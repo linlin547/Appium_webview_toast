@@ -22,12 +22,12 @@
 </pre></code>
 <pre><code>
     元素无法定位
-    3.1 使用元素坐标点定位，有两种点击方法:
-        一种是tap([(100, 20), (100, 60), (100, 100)], 500)
-        另一种是使用swipe(630, 320, 630, 320, 500)方法
-    3.2 使用class_name来定位：
-        # 获取页面class_name为android.widget.CheckBox的所有元素，形成一个list
-        checkboxes = self.driver.find_elements_by_class_name('android.widget.CheckBox')
+        3.1 使用元素坐标点定位，有两种点击方法:
+            一种是tap([(100, 20), (100, 60), (100, 100)], 500)
+            另一种是使用swipe(630, 320, 630, 320, 500)方法
+        3.2 使用class_name来定位：
+            # 获取页面class_name为android.widget.CheckBox的所有元素，形成一个list
+            checkboxes = self.driver.find_elements_by_class_name('android.widget.CheckBox')
    </pre></code>
 <pre><code>
     # 指定元素进行操作
@@ -83,8 +83,8 @@
             driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, during);
             logger.info("向上滑动屏幕的3/4");
 </pre></code>
+* Appium（客户端版）解决每次运行Android，都安装Appium Setting和Unlock的方法
 <pre><code>
-    Appium（客户端版）解决每次运行Android，都安装Appium Setting和Unlock的方法
     Appium Setting安装包路径:
     /usr/local/lib/node_modules/appium/node_modules/appium-android-driver/node_modules/io.appium.settings/bin/settings_apk-debug.apk
     Unlock安装包路径:
