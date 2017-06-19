@@ -10,6 +10,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
+#识别中文的办法
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class ContactsAndroidTests(unittest.TestCase):
     def setUp(self):
