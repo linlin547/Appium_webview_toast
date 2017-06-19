@@ -1,4 +1,0 @@
-appium1.6.3新增Uiautomator2获取toast：
-1.安装Uiautomator2 driver：npm install appium-uiautomator2-driver
-2.手机安装下载时的两个app
-3.启动参数增加desired_caps['automationName'] = 'Uiautomator2'
