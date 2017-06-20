@@ -5,10 +5,26 @@
         2.需要找到进入公众号的路径，此部分为native
         3.进入webview后，可以在chrome中打开"chrome://inspect/#devices"，查看当前webview的元素，方便后续定位
 </pre></code>
+* 测试WebView App(一般为H5包个安卓／苹果的壳，或者混合型app)
+<pre><code>
+        1.H5封壳的app一般需要测试的话，在打包时，开启webkit的debug模式，这样driver.contexts方法才能打印出webview名称，便于appium切换
+        2.这里有一个坑，注意这个坑比较乱：
+            坑1：运行中会出现appium的chromedriver的版本和chrome版本不一致错误，导致切不到webview
+            坑2：运行过程中会出现不能执行二进制文件，这个一般是执行chromedriver包的错误，也是导致切不到webview
+            android为例解决办法：
+                1.进入手机设置-应用程序-全部-Android System webView中看下webView的版本(可以理解为chrome的版本)
+                2.找到运行中报错的chromedriver版本--确认下是否不匹配
+                3.网上找一下chromedriver对应的chrome版本，下载对应的chromedriver版本
+                4.将步骤3中下载的chromedriver，替换appium自带的chromedriver
+                ps：
+                    mac为例，appium的chromedriver路径：
+                        1./Users/用户名/Documents/node_modules/appium-chromedriver/chromedriver/mac/chromedriver
+                        2./usr/local/lib/node_modules/appium/node_modules/.2.10.0@appium-chromedriver/chromedriver/mac/chromedriver
+</pre></code>
 * 每次运行测试，app都会重新安装:
 <pre><code>
         1.1 在case里不要设置app的安装路径，只要设置desired_caps['appPackage']（app的包名）和 desired_caps['appActivity']（启动时的activity）即可
-        1.2 在启动appium的时候，加上--no-reset参数
+        1.2 在case中desired_caps['noReset'] = 'true'
     </pre></code>
 * 等待操作:
 <pre><code>
