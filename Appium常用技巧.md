@@ -22,7 +22,7 @@
                         2./usr/local/lib/node_modules/appium/node_modules/.2.10.0@appium-chromedriver/chromedriver/mac/chromedriver
         3.切换到webview后，可以在chrome中打开"chrome://inspect/#devices"，查看当前webview的元素，方便后续定位
 </pre></code>
-    ![feature](https://github.com/linlin547/Appium/blob/master/image/chrome-chromedriver.png)
+* ![feature](https://github.com/linlin547/Appium/blob/master/image/chrome-chromedriver.png)
 * 每次运行测试，app都会重新安装:
 <pre><code>
         1.1 在case里不要设置app的安装路径，只要设置desired_caps['appPackage']（app的包名）和 desired_caps['appActivity']（启动时的activity）即可
