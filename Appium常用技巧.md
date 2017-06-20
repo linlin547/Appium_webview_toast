@@ -3,7 +3,7 @@
 <pre><code>
         1.打开微信debug，微信进入debugx5.qq.com这个地址，打开后，点击页面上"信息"页，勾选是否打开TBS内核Inspector调试功能。
         2.需要找到进入公众号的路径，此部分为native
-        3.进入webview后，可以在chrome中打开"chrome://inspect/#devices"，查看当前webview的元素，方便后续定位
+        3.切换到webview后，可以在chrome中打开"chrome://inspect/#devices"，查看当前webview的元素，方便后续定位
 </pre></code>
 * 测试WebView App(一般为H5包个安卓／苹果的壳，或者混合型app)
 <pre><code>
@@ -20,6 +20,7 @@
                     mac为例，appium的chromedriver路径：
                         1./Users/用户名/Documents/node_modules/appium-chromedriver/chromedriver/mac/chromedriver
                         2./usr/local/lib/node_modules/appium/node_modules/.2.10.0@appium-chromedriver/chromedriver/mac/chromedriver
+        3.切换到webview后，可以在chrome中打开"chrome://inspect/#devices"，查看当前webview的元素，方便后续定位
 </pre></code>
 * 每次运行测试，app都会重新安装:
 <pre><code>
