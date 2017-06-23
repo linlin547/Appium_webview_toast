@@ -23,8 +23,12 @@
         3.切换到webview后，可以在chrome中打开"chrome://inspect/#devices"，查看当前webview的元素，方便后续定位
 </pre></code>
 * ![feature](https://github.com/linlin547/Appium/blob/master/image/chrome-chromedriver.png)
-
-*查看app的包名和启动名方法:
+* 查看手机设备号和android版本
+<pre><code>
+        1.设备号：adb devics
+        2.系统版本：adb -s 设备号 shell getprop ro.build.version.release
+</pre></code>
+* 查看app的包名和启动名方法:
 <pre><code>
         手机端打开要查看的app程序：
                 1.Mac/Linux: 'adb shell dumpsys window windows | grep mFocusedApp’
