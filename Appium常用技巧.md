@@ -23,6 +23,14 @@
         3.切换到webview后，可以在chrome中打开"chrome://inspect/#devices"，查看当前webview的元素，方便后续定位
 </pre></code>
 * ![feature](https://github.com/linlin547/Appium/blob/master/image/chrome-chromedriver.png)
+
+*查看app的包名和启动名方法:
+<pre><code>
+        手机端打开要查看的app程序：
+                1.Mac/Linux: 'adb shell dumpsys window windows | grep mFocusedApp’
+                2.在 Ruby 控制台运行: 'adb shell dumpsys window windows`.each_line.grep(/mFocusedApp/).first.strip’
+                3.在 Windows 终端运行 'adb shell dumpsys window windows’ 然后去看mFocusedApp这一行的内容。
+</pre></code>
 * 每次运行测试，app都会重新安装:
 <pre><code>
         1.1 在case里不要设置app的安装路径，只要设置desired_caps['appPackage']（app的包名）和 desired_caps['appActivity']（启动时的activity）即可
