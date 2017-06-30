@@ -8,5 +8,5 @@
         * io.appium.uiautomator2.server
         * io.appium.uiautomator2.server.test
         * 但是......运行基本会报错，有个地方很关键：
-            * 本地android-sdk的tools文件中必须要有文件：zipalign
+            * 本地android-sdk的tools文件中必须要有文件：zipalign</br>
             * 没有的话需要升级下sdk的版本(比如升到android6.0)，一般都会生成上面这个文件
