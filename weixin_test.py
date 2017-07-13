@@ -22,9 +22,6 @@ class ContactsAndroidTests(unittest.TestCase):
         desired_caps['platformVersion'] = '4.3'
         desired_caps['deviceName'] = 'd5a1bc96'
         # desired_caps['fullReset'] = 'false'
-        desired_caps['chromeOptions'] = {
-            'androidProcess': 'com.tencent.mm:appbrand3'
-        }
         # if install app
         desired_caps['noReset'] = 'true'
         # run more device session
